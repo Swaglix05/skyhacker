@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyhacker - Password Strength Checker</title>
+    <link rel="stylesheet" href="style_light.css">
+</head>
+<body>
+    <div class="lightSide">
+    <div class="header">
+        <h1>Skyhacker</h1>
+        <p class="subtitle">Light Side of the Force</p>
+    </div>
+    
+    <div class="container">
+        <div class="main-content">
+            <!-- Password Input Section -->
+            <div class="input-section">
+                <label for="password-input">Enter Password:</label>
+                <input type="password" id="password-input" placeholder="Type your password..." />
+                <button id="toggle-visibility" class="toggle-btn">👁️ Show</button>
+            </div>
+
+            <!-- Strength Bar Section -->
+            <div class="strength-section">
+                <label>Password Strength:</label>
+                <div class="strength-bar-container">
+                    <div class="strength-bar" id="strength-bar"></div>
+                </div>
+                <p class="strength-text" id="strength-text">Enter a password</p>
+            </div>
+
+            <!-- Engine Strength Section -->
+            <div class="time-section">
+                <label for="engine-slider">Engine Strength:</label>
+                <div class="slider-wrapper">
+                    <div class="engine-labels">
+                        <span class="engine-label" id="engine-start">Toaster</span>
+                        <span class="engine-label engine-middle" id="engine-middle">Avg. Computer</span>
+                        <span class="engine-label" id="engine-end">Quantum Computer</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="engine-slider" min="0" max="100" value="50">
+                    </div>
+                    <span class="time-display" id="time-display">N/A</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script_light.js"></script>
+    </div>
+    <div class="darkSide">
+    
+    </div>
+</body>
+</html>
