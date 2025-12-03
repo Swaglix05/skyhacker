@@ -1,0 +1,81 @@
+/* Dark/Hacker theme overrides (applies when body.dark-mode is present) */
+body.dark-mode {
+  background: linear-gradient(135deg, #02040b 0%, #071026 100%);
+  color: #cfe6ff;
+}
+
+/* dark-side panel */
+.dark-side {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(10,15,25,0.9);
+  border-radius: 8px;
+  color: #dfefff;
+  border: 1px solid rgba(120,160,255,0.06);
+}
+
+.dark-side .dark-hash {
+  /* will be positioned next to the password input via JS */
+  position: fixed;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transform: translate(0,0);
+  z-index: 60;
+}
+
+.dark-side label { color: #9fc6ff; font-weight:700; }
+.dark-side #password-hash { font-family: monospace; color:#eaf6ff; }
+
+.brute-area { display:flex; gap:12px; align-items:center; }
+.attempt-display { font-family: monospace; font-size: 16px; background: rgba(255,255,255,0.02); padding:6px 8px; border-radius:4px; color:#fff; }
+.attempt-hash { font-family: monospace; font-size:12px; color:#9fd7ff; }
+
+.hash-input {
+  font-family: monospace;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #eaf6ff;
+  min-width: 320px;
+}
+
+.attempt-display {
+  min-width: 260px;
+  padding: 10px 12px;
+}
+
+.attempt-hash {
+  min-width: 320px;
+}
+
+.dark-controls { display:flex; gap:8px; }
+.dark-controls button { padding:8px 12px; border-radius:6px; border:none; background:#1473ff; color:#fff; cursor:pointer; }
+
+.attempts-count { color:#9fc6ff; font-weight:600; margin-top:8px; }
+
+/* ensure dark-side uses relative positioning so absolute hash box can be positioned anywhere on page by JS */
+.dark-side { position: relative; }
+
+.time-to-solve { color:#9fc6ff; margin-top:8px; font-weight:600; }
+
+/* When hacker-mode active, show the panel */
+body.dark-mode .dark-side { display:flex; }
+
+/* Hide light-specific UI when in dark-mode (override if needed) */
+body.dark-mode .strength-section,
+body.dark-mode .time-section { display:none !important; }
+
+/* Hide the original password input and its visibility toggle while in hacker mode */
+body.dark-mode #password-input,
+body.dark-mode #toggle-visibility { display: none !important; }
+
+/* Make the password input stand out in hacker mode */
+body.dark-mode #password-input { background:#071026; color:#eaf6ff; border-color: rgba(120,160,255,0.12); }

@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skyhacker - Password Strength Checker</title>
     <link rel="stylesheet" href="style_light.css">
+    <link rel="stylesheet" href="style_dark.css">
 </head>
+
 <body>
     <div class="lightSide">
-    <div class="header">
-        <h1>Skyhacker</h1>
-        <p class="subtitle">Light Side of the Force</p>
-    </div>
-    
-    <div class="container">
-        <div class="main-content">
-            <!-- Password Input Section -->
-            <div class="input-section">
-                <label for="password-input">Enter Password:</label>
-                <input type="password" id="password-input" placeholder="Type your password..." />
-                <button id="toggle-visibility" class="toggle-btn">👁️ Show</button>
-            </div>
+        <div class="header">
+            <h1>Skyhacker</h1>
+            <p class="subtitle">Light Side of the Force</p>
+        </div>
 
-            <!-- Strength Bar Section -->
-            <div class="strength-section">
-                <label>Password Strength:</label>
-                <div class="strength-bar-container">
-                    <div class="strength-bar" id="strength-bar"></div>
+        <div class="container">
+            <div class="main-content">
+                <!-- Password Input Section -->
+                <div class="input-section">
+                    <label for="password-input">Enter Password:</label>
+                    <input type="password" id="password-input" placeholder="Type your password..." />
+                    <button id="toggle-visibility" class="toggle-btn">👁️ Show</button>
                 </div>
-                <p class="strength-text" id="strength-text">Enter a password</p>
-            </div>
 
-            <!-- Engine Strength Section -->
-            <div class="time-section">
-                <label for="engine-slider">Engine Strength:</label>
-                <div class="slider-wrapper">
-                    <div class="engine-labels">
-                        <span class="engine-label" id="engine-start">Toaster</span>
-                        <span class="engine-label engine-middle" id="engine-middle">Avg. Computer</span>
-                        <span class="engine-label" id="engine-end">Quantum Computer</span>
+                <!-- Strength Bar Section -->
+                <div class="strength-section">
+                    <label>Password Strength:</label>
+                    <div class="strength-bar-container">
+                        <div class="strength-bar" id="strength-bar"></div>
                     </div>
-                    <div class="slider-container">
-                        <input type="range" id="engine-slider" min="0" max="100" value="50">
+                    <p class="strength-text" id="strength-text">Enter a password</p>
+                </div>
+
+                <!-- Engine Strength Section -->
+                <div class="time-section">
+                    <label for="engine-slider">Engine Strength:</label>
+                    <div class="slider-wrapper">
+                        <div class="engine-labels">
+                            <span class="engine-label" id="engine-start">Toaster</span>
+                            <span class="engine-label engine-middle" id="engine-middle">Avg. Computer</span>
+                            <span class="engine-label" id="engine-end">Quantum Computer</span>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="engine-slider" min="0" max="100" value="50">
+                        </div>
+                        <span class="time-display" id="time-display">N/A</span>
                     </div>
-                    <span class="time-display" id="time-display">N/A</span>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="script_light.js"></script>
+        <!-- Dark/Hacker side (hidden by default) -->
+        <div id="darkSide" class="dark-side">
+            <div class="brute-area">
+                <!-- This first area becomes the editable password input in dark-mode. Characters are spaced for visual alignment. -->
+                <input id="password-input-dark" class="attempt-display" placeholder="Type password..." value="">
+                <input id="password-hash-input" class="hash-input" readonly value="N/A">
+            </div>
+            <div class="brute-area">
+                <!-- visual attempt area (bottom) -->
+                <input id="attempt-display" class="attempt-display" readonly value="---">
+                <input id="attempt-hash" class="hash-input" readonly value="---">
+            </div>
+            <div class="dark-controls">
+                <button id="solve-btn">Solve</button>
+                <button id="stop-btn" style="display:none;">Stop</button>
+            </div>
+            <div id="attempts-count" class="attempts-count">Solves since: 0</div>
+            <div id="time-to-solve" class="time-to-solve">Time to solve: 0s</div>
+        </div>
     </div>
     <div class="darkSide">
-    
+        <div style="text-align:center; margin:18px 0;">
+            <button id="toggle-hacker" class="toggle-btn">Enter Hacker Mode</button>
+        </div>
+        <script src="script_light.js"></script>
+        <script src="script_dark.js"></script>
     </div>
 </body>
+
 </html>
