@@ -147,7 +147,7 @@
         const pretty = attempt.split('').join('|') + (attempt.length ? '|' : '');
         if (attemptDisplay) attemptDisplay.value = pretty;
         const h = await computeHash(attempt);
-        const short = h.slice(0,24) + '...';
+        const short = h;
         if (attemptHash) attemptHash.value = short;
         if (attemptHashInput) attemptHashInput.value = short;
         attempts++;
@@ -193,4 +193,5 @@
     bruteCancel = false;
   }
 
+  if(toggleHackerBtn) toggleHackerBtn.click(); // Auto-enable dark mode for testing TODO remove
 })();
