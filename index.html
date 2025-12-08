@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skyhacker - Password Strength Checker</title>
+    <title>Skyhacker - Password Analyser</title>
     <link rel="stylesheet" href="style_light.css">
     <link rel="stylesheet" href="style_dark.css">
 </head>
@@ -13,30 +13,28 @@
     <div class="lightSide">
         <div class="header">
             <h1>Skyhacker</h1>
-            <p class="subtitle">Light Side of the Force</p>
+            <p class="subtitle" id="body-subtitle">Light Side of the Force</p>
         </div>
 
         <div class="container">
             <div class="main-content">
                 <!-- Password Input Section -->
                 <div class="input-section">
-                    <label for="password-input">Enter Password:</label>
                     <input type="password" id="password-input" placeholder="Type your password..." />
                     <button id="toggle-visibility" class="toggle-btn">👁️ Show</button>
                 </div>
 
                 <!-- Strength Bar Section -->
                 <div class="strength-section">
-                    <label>Password Strength:</label>
                     <div class="strength-bar-container">
                         <div class="strength-bar" id="strength-bar"></div>
                     </div>
-                    <p class="strength-text" id="strength-text">Enter a password</p>
+                    <p class="strength-text" id="strength-text">Strength (0%)</p>
                 </div>
 
                 <!-- Engine Strength Section -->
                 <div class="time-section">
-                    <label for="engine-slider">Engine Strength:</label>
+                    <!-- <label for="engine-slider">Engine Strength:</label> -->
                     <div class="slider-wrapper">
                         <div class="engine-labels">
                             <span class="engine-label" id="engine-start">Toaster</span>
@@ -51,24 +49,41 @@
                 </div>
             </div>
         </div>
-        <!-- Dark/Hacker side (hidden by default) -->
         <div id="darkSide" class="dark-side">
             <div class="brute-area">
-                <!-- This first area becomes the editable password input in dark-mode. Characters are spaced for visual alignment. -->
                 <input id="password-input-dark" class="attempt-display" placeholder="Type password..." value="">
-                <input id="password-hash-input" type="text" class="hash-input" readonly value="N/A">
+                <input id="attempt-display" class="attempt-display" readonly value="---" disabled>
+                <div class="options">
+                    <div class="dark-controls">
+                        <button id="solve-btn">Solve</button>
+                        <button id="stop-btn" style="display:none;">Stop</button>
+                    </div>
+                    <div id="attempts-count" class="attempts-count">Attempts: 0</div>
+                    <div id="time-to-solve" class="time-to-solve">Time to solve: 0s</div>
+                </div>
             </div>
-            <div class="brute-area">
-                <!-- visual attempt area (bottom) -->
-                <input id="attempt-display" class="attempt-display" readonly value="---">
-                <input id="attempt-hash" type="text" class="hash-input" readonly value="---">
+            <div class="brute-area" style="display: flex; flex-direction: column;">
+                <input id="password-hash-input" type="text" class="hash-input" readonly value="N/A" disabled>
+                <input id="attempt-hash" type="text" class="hash-input" readonly value="---" disabled>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="option0" name="option0">
+                        <label for="option0">lowercase</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="option1" name="option0">
+                        <label for="option1">UPPERCASE</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="option1" name="option0">
+                        <label for="option1">d1g1t5</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="option1" name="option0">
+                        <label for="option1">$pec!a|_</label>
+                    </div>
+                </div>
             </div>
-            <div class="dark-controls">
-                <button id="solve-btn">Solve</button>
-                <button id="stop-btn" style="display:none;">Stop</button>
-            </div>
-            <div id="attempts-count" class="attempts-count">Solves since: 0</div>
-            <div id="time-to-solve" class="time-to-solve">Time to solve: 0s</div>
         </div>
     </div>
     <div class="darkSide">
