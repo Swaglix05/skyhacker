@@ -218,17 +218,21 @@ let bruteTimer = null;
 
 async function startBruteForce() {
   if (bruteRunning) return;
+  if(passwordInputLight.value.length === 0){
+    alert("Please enter a password to solve.");
+    return;
+  }
   bruteCancel = false;
   bruteRunning = true;
-  if (solveBtn) solveBtn.style.display = 'none';
-  if (stopBtn) stopBtn.style.display = '';
-  if (attemptDisplay) attemptDisplay.value = '';
-  if (attemptHash) attemptHash.value = '';
+  solveBtn.style.display = 'none';
+  stopBtn.style.display = '';
+  attemptDisplay.value = '';
+  attemptHash.value = '';
 
   attemptsCount = 0;
-  if (attemptsCountEl) attemptsCountEl.textContent = 'Attempts: 0';
+  attemptsCountEl.textContent = 'Attempts: 0';
 
-  const target = (passwordInputLight && passwordInputLight.value) ? passwordInputLight.value : '';
+  const target = passwordInputLight.value;
   const targetHash = await computeHash(target);
 
   bruteStartTime = Date.now();
@@ -285,4 +289,4 @@ async function startBruteForce() {
   bruteCancel = false;
 }
 
-if (toggleHackerBtn) toggleHackerBtn.click(); // Auto-enable dark mode for testing TODO remove
+// if (toggleHackerBtn) toggleHackerBtn.click(); // Auto-enable dark mode for testing TODO remove

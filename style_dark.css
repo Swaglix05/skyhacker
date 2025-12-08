@@ -1,148 +1,235 @@
-/* Dark/Hacker theme overrides (applies when body.dark-mode is present) */
 body.dark-mode {
-  background: linear-gradient(135deg, #02040b 0%, #071026 100%);
-  color: #cfe6ff;
+    background: linear-gradient(135deg, #1a0000 0%, #330000 100%);
+    color: #ffcccc;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
 }
 
 /* dark-side panel */
 .dark-side {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 12px;
-  padding: 12px;
-  background: rgba(10, 15, 25, 0.9);
-  border-radius: 8px;
-  color: #dfefff;
-  border: 1px solid rgba(120, 160, 255, 0.06);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 12px;
+    background: transparent;
+    border-radius: 0px;
+    color: #dd6666;
+    border: none;
+    box-shadow: none;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
 }
 
 .dark-side .dark-hash {
-  /* will be positioned next to the password input via JS */
-  position: fixed;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0);
-  z-index: 60;
+    position: fixed;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    z-index: 60;
 }
 
 .dark-side label {
-  color: #9fc6ff;
-  font-weight: 700;
+    color: #ff6666;
+    font-weight: 700;
 }
 
 .dark-side #password-hash {
-  font-family: monospace;
-  color: #eaf6ff;
+    font-family: monospace;
+    color: #eaf6ff;
 }
 
 .brute-area {
-  display: flex;
-  gap: 12px;
-  flex-direction: column;
-  /* align-items: center; */
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    /* align-items: center; */
 }
 
 #password-input-dark {
-  letter-spacing: 0.5rem;
+    letter-spacing: 0.5rem;
 }
 
 .hash-input {
-  font-family: monospace;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.8rem;
-  /* border: 1px solid rgba(255, 255, 255, 0.06); */
-  border: 0px;
-  background: rgba(255, 255, 255, 0.02);
-  color: #eaf6ff;
-  width: 39.9rem;
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    border: 0px;
+    background: rgba(20, 2, 2, 0.9);
+    color: #cc5555;
+    width: 39.9rem;
 }
 
-.option{
-  display: flex;
-  flex-direction: column;
+.option {
+    display: flex;
+    flex-direction: column;
 }
 
 .attempt-display {
-  min-width: 350px;
-  width: 350px;
-  font-family: monospace;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.8rem;
-  background: rgba(255, 255, 255, 0.02);
-  /* padding: 6px 8px; */
-  /* border-radius: 4px; */
-  color: #fff;
-  border: 0px;
+    min-width: 350px;
+    width: 350px;
+    font-family: monospace;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    background: rgba(20, 2, 2, 0.9);
+    color: #cc5555;
+    border: 0px;
 }
 
 .attempt-hash {
-  min-width: 320px;
+    min-width: 320px;
 }
 
 .dark-controls {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 .dark-controls button {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  background: #1473ff;
-  color: #fff;
-  cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #8b2323;
+    color: #cc5555;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.dark-controls button:hover {
+    background: #bb3333;
+    box-shadow: 0 0 10px rgba(200, 0, 0, 0.4);
 }
 
 .attempts-count {
-  color: #9fc6ff;
-  font-weight: 600;
-  margin-top: 8px;
+    color: #bb6666;
+    font-weight: 600;
+    margin-top: 8px;
 }
 
 /* ensure dark-side uses relative positioning so absolute hash box can be positioned anywhere on page by JS */
 .dark-side {
-  position: relative;
-  flex-direction: row;
+    position: relative;
+    flex-direction: row;
 }
 
 .time-to-solve {
-  color: #9fc6ff;
-  margin-top: 8px;
-  font-weight: 600;
+    color: #bb6666;
+    margin-top: 8px;
+    font-weight: 600;
 }
 
-/* When hacker-mode active, show the panel */
 body.dark-mode .dark-side {
-  display: flex;
+    display: flex;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
 }
 
-/* Hide light-specific UI when in dark-mode (override if needed) */
+body.dark-mode .font-red-white {
+    color: #ffcccc;
+    background: #8b2323;
+}
+
+body.dark-mode #toggle-hacker {
+    background: #8b2323;
+    color: #ffcccc;
+    border: 2px solid #cc5555;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(200, 0, 0, 0.25);
+    transition: none !important;
+}
+
+body.dark-mode #toggle-hacker:hover {
+    background: #bb3333;
+    color: #fff;
+    box-shadow: 0 0 18px rgba(255, 80, 80, 0.35);
+    transition: none !important;
+}
+
+/* Title and subtitle color for dark mode */
+body.dark-mode h1 {
+    color: #ff4444 !important;
+    text-shadow: 0 6px 24px rgba(255, 0, 0, 0.25);
+}
+
+body.dark-mode .subtitle {
+    color: #ffbbbb !important;
+    text-shadow: 0 2px 8px rgba(255, 0, 0, 0.15);
+}
+
 body.dark-mode .strength-section,
 body.dark-mode .time-section {
-  display: none !important;
+    display: none !important;
 }
 
-/* Hide the original password input and its visibility toggle while in hacker mode */
 body.dark-mode #password-input,
 body.dark-mode #toggle-visibility {
-  display: none !important;
+    display: none !important;
 }
 
-/* Make the password input stand out in hacker mode */
 body.dark-mode #password-input {
-  background: #071026;
-  color: #eaf6ff;
-  border-color: rgba(120, 160, 255, 0.12);
+    background: #071026;
+    color: #eaf6ff;
+    border-color: rgba(120, 160, 255, 0.12);
 }
 
 .options {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Custom checkbox styling */
+.option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid #8b2323;
+    border-radius: 4px;
+    background: rgba(15, 1, 1, 0.9);
+    outline: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.option input[type="checkbox"]:checked {
+    background: #8b2323;
+    box-shadow: inset 0 0 8px rgba(150, 40, 40, 0.5);
+}
+
+.option input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: #cc5555;
+    font-weight: bold;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.option input[type="checkbox"]:hover {
+    border-color: #bb3333;
+    box-shadow: 0 0 8px rgba(150, 40, 40, 0.3);
+}
+
+.option input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background: rgba(80, 15, 15, 0.7);
 }

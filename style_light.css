@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ h1 {
 }
 
 .container label {
-    color: #667eea;
+    color: #4a90e2;
 }
 
 .main-content {
@@ -75,14 +75,14 @@ h1 {
 
 .input-section input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #4a90e2;
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 .toggle-btn {
     padding: 12px 18px;
-    background: #667eea;
+    background: #4a90e2;
     color: white;
     border: none;
     border-radius: 8px;
@@ -91,12 +91,13 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 5px;
+   transition: none !important;
 }
 
 .toggle-btn:hover {
-    background: #764ba2;
+    background: #357abd;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
 }
 
 .toggle-btn:active {
@@ -184,33 +185,33 @@ h1 {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #667eea;
+    background: #4a90e2;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.45);
+    box-shadow: 0 2px 10px rgba(74, 144, 226, 0.45);
     transition: all 0.3s ease;
 }
 
 #time-slider::-webkit-slider-thumb:hover {
-    background: #764ba2;
+    background: #357abd;
     transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.6);
 }
 
 #time-slider::-moz-range-thumb {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #667eea;
+    background: #4a90e2;
     cursor: pointer;
     border: none;
-    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.45);
+    box-shadow: 0 2px 10px rgba(74, 144, 226, 0.45);
     transition: all 0.3s ease;
 }
 
 #time-slider::-moz-range-thumb:hover {
-    background: #764ba2;
+    background: #357abd;
     transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.6);
 }
 
 #engine-slider {
@@ -231,40 +232,40 @@ h1 {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #667eea;
+    background: #4a90e2;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.45);
+    box-shadow: 0 2px 10px rgba(74, 144, 226, 0.45);
     transition: all 0.3s ease;
 }
 
 #engine-slider::-webkit-slider-thumb:hover {
-    background: #764ba2;
+    background: #357abd;
     transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.6);
 }
 
 #engine-slider::-moz-range-thumb {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #667eea;
+    background: #4a90e2;
     cursor: pointer;
     border: none;
-    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.45);
+    box-shadow: 0 2px 10px rgba(74, 144, 226, 0.45);
     transition: all 0.3s ease;
 }
 
 #engine-slider::-moz-range-thumb:hover {
-    background: #764ba2;
+    background: #357abd;
     transform: scale(1.15);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.6);
 }
 
 .time-display {
     min-width: 120px;
     text-align: right;
     font-weight: 600;
-    color: #667eea;
+    color: #4a90e2;
     font-size: 14px;
     padding: 8px 12px;
     background: #f0f0f0;
@@ -296,7 +297,6 @@ h1 {
     position: relative;
 }
 
-/* Restore compact/mobile sizes for small screens */
 @media (max-width: 600px) {
     .container {
         padding: 25px;

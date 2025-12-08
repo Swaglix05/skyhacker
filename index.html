@@ -18,23 +18,19 @@
 
         <div class="container">
             <div class="main-content">
-                <!-- Password Input Section -->
                 <div class="input-section">
                     <input type="password" id="password-input" placeholder="Type your password..." />
                     <button id="toggle-visibility" class="toggle-btn">👁️ Show</button>
                 </div>
 
-                <!-- Strength Bar Section -->
                 <div class="strength-section">
                     <div class="strength-bar-container">
                         <div class="strength-bar" id="strength-bar"></div>
                     </div>
-                    <p class="strength-text" id="strength-text">Strength (0%)</p>
+                    <p class="strength-text" id="strength-text">Enter a password (0%)</p>
                 </div>
 
-                <!-- Engine Strength Section -->
                 <div class="time-section">
-                    <!-- <label for="engine-slider">Engine Strength:</label> -->
                     <div class="slider-wrapper">
                         <div class="engine-labels">
                             <span class="engine-label" id="engine-start">Toaster</span>
@@ -55,8 +51,8 @@
                 <input id="attempt-display" class="attempt-display" readonly value="---" disabled>
                 <div class="options">
                     <div class="dark-controls">
-                        <button id="solve-btn">Solve</button>
-                        <button id="stop-btn" style="display:none;">Stop</button>
+                        <button id="solve-btn" class="font-red-white">Solve</button>
+                        <button id="stop-btn" class="font-red-white" style="display:none;">Stop</button>
                     </div>
                     <div id="attempts-count" class="attempts-count">Attempts: 0</div>
                     <div id="time-to-solve" class="time-to-solve">Time to solve: 0s</div>
