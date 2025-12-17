@@ -92,7 +92,7 @@ const darkHashBox = document.querySelector('.dark-hash');
     attemptDisplay.value = '---';
     attemptHash.value = '---';
     const timeToSolveEl = document.getElementById('time-to-solve');
-    timeToSolveEl.textContent = 'Time to solve: 0s';
+    timeToSolveEl.textContent = 'Time: 0s';
     passwordInputDark.value = raw;
     lastValidValue = raw;
     computeHash(raw).then(h => { passwordHashEl.value = h; });
@@ -111,7 +111,7 @@ const darkHashBox = document.querySelector('.dark-hash');
     attemptDisplay.value = '---';
     attemptHash.value = '---';
     const timeToSolveEl = document.getElementById('time-to-solve');
-    timeToSolveEl.textContent = 'Time to solve: 0s';
+    timeToSolveEl.textContent = 'Time: 0s';
     if (typeof handlePasswordInput === 'function') handlePasswordInput();
   }
 });
@@ -127,7 +127,7 @@ if (passwordInputLight) passwordInputLight.addEventListener('input', () => {
     if (attemptDisplay) attemptDisplay.value = 'Stopped';
     if (attemptHash) attemptHash.value = '---';
     const timeToSolveEl = document.getElementById('time-to-solve');
-    if (timeToSolveEl) timeToSolveEl.textContent = 'Time to solve: 0s';
+    if (timeToSolveEl) timeToSolveEl.textContent = 'Time: 0s';
   }
   const raw = passwordInputLight.value || '';
   computeHash(raw).then(h => { passwordHashEl.value = h; });
@@ -162,7 +162,7 @@ passwordInputDark.addEventListener('input', (ev) => {
     if (attemptDisplay) attemptDisplay.value = 'Stopped';
     if (attemptHash) attemptHash.value = '---';
     const timeToSolveEl = document.getElementById('time-to-solve');
-    if (timeToSolveEl) timeToSolveEl.textContent = 'Time to solve: 0s';
+    if (timeToSolveEl) timeToSolveEl.textContent = 'Time: 0s';
   }
 
   lastValidValue = rawValue;
@@ -237,14 +237,14 @@ async function startBruteForce() {
 
   bruteStartTime = Date.now();
   const timeToSolveEl = document.getElementById('time-to-solve');
-  if (timeToSolveEl) timeToSolveEl.textContent = 'Time to solve: 0s';
+  if (timeToSolveEl) timeToSolveEl.textContent = 'Time: 0s';
   if (bruteTimer) clearInterval(bruteTimer);
   bruteTimer = setInterval(() => {
     const secs = Math.floor((Date.now() - bruteStartTime) / 1000);
-    if (timeToSolveEl) timeToSolveEl.textContent = 'Time to solve: ' + secs + 's';
+    if (timeToSolveEl) timeToSolveEl.textContent = 'Time: ' + secs + 's';
   }, 250);
 
-  const maxLen = Math.min(4, Math.max(1, target.length || 3));
+  const maxLen = Math.max(4, target.length || 3);
 
   let attempts = 0;
   let found = false;
@@ -279,7 +279,7 @@ async function startBruteForce() {
     const timeToSolveEl = document.getElementById('time-to-solve');
     if (timeToSolveEl) {
       const secs = Math.floor((Date.now() - bruteStartTime) / 1000);
-      timeToSolveEl.textContent = 'Time to solve: ' + secs + 's';
+      timeToSolveEl.textContent = 'Time: ' + secs + 's';
     }
   }
 
