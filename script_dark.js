@@ -269,8 +269,8 @@ async function startBruteForce() {
         if (indices[pos] >= getAllowedChars().length) { indices[pos] = 0; pos--; continue; }
         break;
       }
+      await new Promise(requestAnimationFrame);
       if (pos < 0) break; // overflow
-
     }
   }
 
