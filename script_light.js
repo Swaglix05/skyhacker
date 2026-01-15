@@ -66,21 +66,24 @@ function calculatePasswordStrength(password) {
 }
 /**
  * Calculate time to crack based on password strength and engine strength
- * Leave this method empty as requested - to be implemented
- * 
- * @param {string} password - The password to analyze
+ * * @param {string} password - The password to analyze
  * @param {number} engineStrength - Engine strength (0-100): 0=Toaster, 50=Avg Computer, 100=Quantum Computer
  */
 function calculateTimeToCrack(password, engineStrength) {
-    // TODO: Implement time to crack calculation
-    const strength = calculatePasswordStrength(password);
-    console.log(engineStrength);
-    
-    const baseCrackTime = Math.pow(2, (strength / 10)) * 10;
-    const engineMultiplier = Math.pow(10, (100 - engineStrength) / 30);
-    const customMult= Math.pow(10,password.length/2);
-    
-    return baseCrackTime * engineMultiplier*customMult;
+    let poolSize = 0;
+    if (/[a-z]/.test(password)) poolSize += 26;
+    if (/[A-Z]/.test(password)) poolSize += 26;
+    if (/[0-9]/.test(password)) poolSize += 10; 
+    if (/[^a-zA-Z0-9]/.test(password)) poolSize += 33;
+
+    if (poolSize === 0) poolSize = 1;
+
+    const combinations = Math.pow(poolSize, password.length);
+    const rate = Math.pow(10, engineStrength * 0.2);
+
+    const seconds = combinations / rate;
+
+    return seconds * 1000;
 }
 
 /**
